@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		371C7A851EAE998300986DE8 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C7A841EAE998300986DE8 /* LocationDetailsViewController.swift */; };
 		371C7A871EAFBD0900986DE8 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C7A861EAFBD0900986DE8 /* CategoryPickerViewController.swift */; };
+		371C7A891EB12CDA00986DE8 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C7A881EB12CDA00986DE8 /* HudView.swift */; };
+		371C7A8C1EB16ED100986DE8 /* Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 371C7A8A1EB16ED100986DE8 /* Checkmark@2x.png */; };
+		371C7A8D1EB16ED100986DE8 /* Checkmark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 371C7A8B1EB16ED100986DE8 /* Checkmark@3x.png */; };
+		371C7A8F1EB1AA2700986DE8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C7A8E1EB1AA2700986DE8 /* Functions.swift */; };
 		37ACE59C1EA569BA009CA3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACE59B1EA569BA009CA3BF /* AppDelegate.swift */; };
 		37ACE59E1EA569BA009CA3BF /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACE59D1EA569BA009CA3BF /* CurrentLocationViewController.swift */; };
 		37ACE5A01EA569BA009CA3BF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACE59F1EA569BA009CA3BF /* SecondViewController.swift */; };
@@ -20,6 +24,10 @@
 /* Begin PBXFileReference section */
 		371C7A841EAE998300986DE8 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailsViewController.swift; path = ../LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		371C7A861EAFBD0900986DE8 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryPickerViewController.swift; path = ../CategoryPickerViewController.swift; sourceTree = "<group>"; };
+		371C7A881EB12CDA00986DE8 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		371C7A8A1EB16ED100986DE8 /* Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark@2x.png"; path = "../../../The iOS Apprentice 3 - MyLocations/Resources/Hud Images/Checkmark@2x.png"; sourceTree = "<group>"; };
+		371C7A8B1EB16ED100986DE8 /* Checkmark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checkmark@3x.png"; path = "../../../The iOS Apprentice 3 - MyLocations/Resources/Hud Images/Checkmark@3x.png"; sourceTree = "<group>"; };
+		371C7A8E1EB1AA2700986DE8 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		37ACE5981EA569BA009CA3BF /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ACE59B1EA569BA009CA3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37ACE59D1EA569BA009CA3BF /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +75,12 @@
 				37ACE59F1EA569BA009CA3BF /* SecondViewController.swift */,
 				37ACE5A11EA569BA009CA3BF /* Main.storyboard */,
 				37ACE5A41EA569BA009CA3BF /* Assets.xcassets */,
+				371C7A8A1EB16ED100986DE8 /* Checkmark@2x.png */,
+				371C7A8B1EB16ED100986DE8 /* Checkmark@3x.png */,
 				37ACE5A61EA569BA009CA3BF /* LaunchScreen.storyboard */,
 				37ACE5A91EA569BA009CA3BF /* Info.plist */,
+				371C7A881EB12CDA00986DE8 /* HudView.swift */,
+				371C7A8E1EB1AA2700986DE8 /* Functions.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -135,7 +147,9 @@
 			files = (
 				37ACE5A81EA569BA009CA3BF /* LaunchScreen.storyboard in Resources */,
 				37ACE5A51EA569BA009CA3BF /* Assets.xcassets in Resources */,
+				371C7A8C1EB16ED100986DE8 /* Checkmark@2x.png in Resources */,
 				37ACE5A31EA569BA009CA3BF /* Main.storyboard in Resources */,
+				371C7A8D1EB16ED100986DE8 /* Checkmark@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371C7A891EB12CDA00986DE8 /* HudView.swift in Sources */,
 				371C7A851EAE998300986DE8 /* LocationDetailsViewController.swift in Sources */,
 				37ACE5A01EA569BA009CA3BF /* SecondViewController.swift in Sources */,
+				371C7A8F1EB1AA2700986DE8 /* Functions.swift in Sources */,
 				37ACE59C1EA569BA009CA3BF /* AppDelegate.swift in Sources */,
 				371C7A871EAFBD0900986DE8 /* CategoryPickerViewController.swift in Sources */,
 				37ACE59E1EA569BA009CA3BF /* CurrentLocationViewController.swift in Sources */,
