@@ -24,11 +24,29 @@ class LocationDetailsViewController: UITableViewController {
     var placemark: CLPlacemark?
     var categoryName = "No Category"
     var managedObjectContext: NSManagedObjectContext!
+    var date = Date()
+    var descriptionText = ""
+    var locationToEdit: Location? {
+        didSet {
+            if let location = locationToEdit {
+                descriptionText = location.locationDescription
+                categoryName = location.category
+                date = location.date
+                coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+                placemark = location.placemark
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descriptionTextView.text = ""
+        if let location = locationToEdit {
+            title = "Edit Location"
+        }
+        
+        descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
         
         latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
@@ -39,7 +57,7 @@ class LocationDetailsViewController: UITableViewController {
         } else {
             addressLabel.text = "No Address Found"
         }
-        dateLabel.text = format(date: Date())
+        dateLabel.text = format(date: date)
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
@@ -104,8 +122,31 @@ class LocationDetailsViewController: UITableViewController {
     
     @IBAction func done() {
         let hudView = HudView.hud(inView: navigationController!.view, animated: true)
-        hudView.text = "Tagged"
-        afterDelay(0.6) {self.dismiss(animated: true, completion: nil)
+
+        let location: Location
+        if let temp = locationToEdit {
+            hudView.text = "Updated"
+            location = temp
+        } else {
+            hudView.text = "Tagged"
+            location = Location(context: managedObjectContext)
+        }
+        
+        location.locationDescription = descriptionTextView.text
+        location.category = categoryName
+        location.latitude = coordinate.latitude
+        location.longitude = coordinate.longitude
+        location.date = date
+        location.placemark = placemark
+        
+        do {
+            try managedObjectContext.save()
+        
+        afterDelay(0.6) {
+            self.dismiss(animated: true, completion: nil)
+            }
+        } catch {
+            fatalCoreDataError(error)
         }
     }
     
