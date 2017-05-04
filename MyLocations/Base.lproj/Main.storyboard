@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="-319"/>
+            <point key="canvasLocation" x="767" y="-773"/>
         </scene>
         <!--Locations-->
         <scene sceneID="oCo-u7-bxh">
@@ -145,7 +145,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwl-F4-KqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494.375" y="417.25352112676057"/>
+            <point key="canvasLocation" x="1607" y="15"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Xoe-yc-CSs">
+            <objects>
+                <viewController id="9BU-uU-87V" customClass="MapViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d6o-Rx-QnC"/>
+                        <viewControllerLayoutGuide type="bottom" id="B22-ps-dy4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sxX-5e-P2c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3FO-Pn-9IY">
+                                <rect key="frame" x="0.0" y="-32" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9BU-uU-87V" id="qw5-Ue-rpM"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfe-CW-gbh">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Map" id="vaa-NU-ncP" userLabel="Title">
+                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="VrR-P0-ye6">
+                                            <connections>
+                                                <action selector="showLocations" destination="9BU-uU-87V" id="6Hg-ie-z2u"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="User" id="4Tc-1n-Vnf">
+                                            <connections>
+                                                <action selector="showUser" destination="9BU-uU-87V" id="Btm-8T-bHE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="9BU-uU-87V" id="gMo-aS-VkE"/>
+                                </connections>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="fkE-8c-rEr"/>
+                    <connections>
+                        <outlet property="mapView" destination="3FO-Pn-9IY" id="Taz-Rp-Jhg"/>
+                        <segue destination="DTh-6d-H0w" kind="presentation" identifier="EditLocation" id="BQp-q3-Qag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rfi-86-Mh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="805"/>
         </scene>
         <!--Locations-->
         <scene sceneID="nCw-Bv-R2a">
@@ -162,7 +215,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uh3-vQ-8Ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="419"/>
+            <point key="canvasLocation" x="767" y="15"/>
         </scene>
         <!--Tag Location-->
         <scene sceneID="yqh-Ed-UoD">
@@ -427,6 +480,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="oRn-BE-mK7" kind="relationship" relationship="viewControllers" id="fCr-j3-yak"/>
+                        <segue destination="9BU-uU-87V" kind="relationship" relationship="viewControllers" id="RuZ-Lk-SpS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -456,6 +510,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AAe-Cq-4ny"/>
+        <segue reference="BQp-q3-Qag"/>
     </inferredMetricsTieBreakers>
 </document>
