@@ -25,6 +25,7 @@
 		37ACE5A81EA569BA009CA3BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ACE5A61EA569BA009CA3BF /* LaunchScreen.storyboard */; };
 		37AF932B1EB95916008242B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AF932A1EB95916008242B0 /* MapKit.framework */; };
 		37AF932D1EB95A32008242B0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AF932C1EB95A32008242B0 /* MapViewController.swift */; };
+		37AF932F1EBD4CBD008242B0 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AF932E1EBD4CBD008242B0 /* UIImage+Resize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		37ACE5A91EA569BA009CA3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37AF932A1EB95916008242B0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		37AF932C1EB95A32008242B0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		37AF932E1EBD4CBD008242B0 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				371C7A9D1EB3B32F00986DE8 /* Location+CoreDataClass.swift */,
 				371C7A9E1EB3B32F00986DE8 /* Location+CoreDataProperties.swift */,
 				379E53101EB805EC0049D53E /* LocationCell.swift */,
+				37AF932E1EBD4CBD008242B0 /* UIImage+Resize.swift */,
 				371C7A841EAE998300986DE8 /* LocationDetailsViewController.swift */,
 				370D23061EB7F4D900A62EAF /* LocationsViewController.swift */,
 				37ACE5A11EA569BA009CA3BF /* Main.storyboard */,
@@ -197,6 +200,7 @@
 				371C7A9C1EB3B22400986DE8 /* DataModel.xcdatamodeld in Sources */,
 				371C7A851EAE998300986DE8 /* LocationDetailsViewController.swift in Sources */,
 				371C7AA01EB3B32F00986DE8 /* Location+CoreDataProperties.swift in Sources */,
+				37AF932F1EBD4CBD008242B0 /* UIImage+Resize.swift in Sources */,
 				371C7A8F1EB1AA2700986DE8 /* Functions.swift in Sources */,
 				379E53111EB805EC0049D53E /* LocationCell.swift in Sources */,
 				37AF932D1EB95A32008242B0 /* MapViewController.swift in Sources */,

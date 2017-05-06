@@ -113,25 +113,30 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoO-bJ-jNl">
-                                            <rect key="frame" x="8" y="8" width="304" height="20"/>
+                                            <rect key="frame" x="82" y="8" width="238" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jQ-Az-6t9">
-                                            <rect key="frame" x="8" y="28" width="304" height="20"/>
+                                            <rect key="frame" x="82" y="28" width="238" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLC-UP-qli">
+                                            <rect key="frame" x="15" y="2" width="52" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="7jQ-Az-6t9" id="GZO-UR-W1k"/>
                                     <outlet property="descriptionLabel" destination="MoO-bJ-jNl" id="ySb-48-6IM"/>
+                                    <outlet property="photoImageView" destination="BLC-UP-qli" id="znr-Ot-U2P"/>
                                     <segue destination="DTh-6d-H0w" kind="presentation" identifier="EditLocation" id="nuu-YO-iVp"/>
                                 </connections>
                             </tableViewCell>
@@ -145,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwl-F4-KqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="15"/>
+            <point key="canvasLocation" x="1606.875" y="14.788732394366198"/>
         </scene>
         <!--Map-->
         <scene sceneID="Xoe-yc-CSs">
@@ -290,6 +295,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZw-3j-V0B">
+                                                    <rect key="frame" x="109" y="11" width="82" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -414,17 +423,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="1Na-tA-LE3" id="H0u-jq-g1L"/>
                         <outlet property="addressLabel" destination="VZc-Cx-XTF" id="hoh-9H-fGi"/>
                         <outlet property="categoryLabel" destination="QYN-bk-9kT" id="g8k-XH-JvZ"/>
                         <outlet property="dateLabel" destination="tkh-se-MMM" id="GDO-iF-5B6"/>
                         <outlet property="descriptionTextView" destination="3gt-se-BD9" id="e1N-NR-8P0"/>
+                        <outlet property="imageView" destination="LZw-3j-V0B" id="O6x-Ea-7fI"/>
                         <outlet property="latitudeLabel" destination="wCE-Rz-6ag" id="X0h-i4-GOw"/>
                         <outlet property="longitudeLabel" destination="mNq-IA-kvR" id="oHH-e2-dUR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8d-lp-ShI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3246" y="14"/>
+            <point key="canvasLocation" x="3245.625" y="13.732394366197184"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="azX-OX-VvF">
@@ -510,6 +521,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BQp-q3-Qag"/>
+        <segue reference="nuu-YO-iVp"/>
     </inferredMetricsTieBreakers>
 </document>
