@@ -80,6 +80,19 @@ class LocationsViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let location = fetchedResultsController.object(at: indexPath)
+            location.removePhotoFile()
+            managedObjectContext.delete(location)
+            do {
+                try managedObjectContext.save()
+            } catch {
+                fatalCoreDataError(error)
+            }
+        }
+    }
+    
     deinit {
         fetchedResultsController.delegate = nil
     }
@@ -131,18 +144,6 @@ extension LocationsViewController: NSFetchedResultsControllerDelegate {
             print("*** NSFetchedResultsChangeUpdate (section)")
         case .move:
             print("*** NSFetchedResultsChangeMove (section)")
-        }
-    }
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let location = fetchedResultsController.object(at: indexPath)
-            managedObjectContext.delete(location)
-            
-            do {
-                try managedObjectContext.save()
-            } catch {
-                fatalCoreDataError(error)
-            }
         }
     }
     
