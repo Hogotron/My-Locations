@@ -13,21 +13,25 @@ class CategoryPickerViewController: UITableViewController {
     
     let categories = [
         "No Category",
-        "Apple Store",
-        "Bar",
-        "Bookstore",
-        "Club",
-        "Grocery Store",
-        "Historic Building",
         "House",
-        "Icecream Vendor",
+        "Bar",
+        "Campspot",
+        "Trailhead",
+        "Store",
+        "Historic Building",
+        "Street Art",
+        "Surf Break",
         "Landmark",
-        "Park"]
+        "Trailhead"]
     
     var selectedIndexPath = IndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = UIColor.black
+        tableView.separatorColor = UIColor(white: 1.0, alpha: 0.2)
+        tableView.indicatorStyle = .white
     
     for i in 0..<categories.count {
         if categories[i] == selectedCategoryName {
@@ -67,6 +71,19 @@ class CategoryPickerViewController: UITableViewController {
             }
             selectedIndexPath = indexPath
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.black
+        
+        if let textLabel = cell.textLabel {
+            textLabel.textColor = UIColor.white
+            textLabel.highlightedTextColor = textLabel.textColor
+        }
+        
+        let selectionView = UIView(frame: CGRect.zero)
+        selectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.4)
+        cell.selectedBackgroundView = selectionView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
